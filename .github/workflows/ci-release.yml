@@ -10,7 +10,7 @@ on:
 
 jobs:
   terraform-lint:
-    name: Terraform Linting
+    name: Terraform Lint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,6 +20,9 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.0
+
+      - name: Terraform Init
+        run: terraform init
 
       - name: Terraform Format
         run: terraform fmt -check
