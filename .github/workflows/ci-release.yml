@@ -45,20 +45,17 @@ jobs:
             --backend-config="bucket=pc-terraform-modules-tfstate" \
             --backend-config="key=pc-terraform-modules.tfstate"
 
-      - name: Terraform Plan - PROD
-        id: tf-plan-prod
-        env:
-          TF_VAR_environment: prod
-          TF_VAR_region: us-east-1
-          TF_VAR_docker_image_tag: "${{env.BRANCH_NAME}}-${{env.SHORT_SHA}}"
-          TF_VAR_short_version: "${{env.SHORT_SHA}}"
+      - name: Iterate through directories and apply Terraform
         run: |
+          for dir in */; do
+            echo "Processing $dir"
+            cd $dir
+          terraform init \
+            --backend-config="bucket=pc-terraform-modules-tfstate" \
+            --backend-config="key=pc-terraform-modules.tfstate"
           terraform plan --out tfplan.out
-
-      - name: Terraform Apply - PROD
-        id: tf-apply-prod
-        run: |
           terraform apply --auto-approve tfplan.out
+          done
 
   semantic-release:
     if: ${{ github.ref == 'refs/heads/main' }}
