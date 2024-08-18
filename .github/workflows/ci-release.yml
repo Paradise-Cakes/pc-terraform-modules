@@ -53,13 +53,11 @@ jobs:
           TF_VAR_docker_image_tag: "${{env.BRANCH_NAME}}-${{env.SHORT_SHA}}"
           TF_VAR_short_version: "${{env.SHORT_SHA}}"
         run: |
-          cd ${GITHUB_WORKSPACE}/terraform
           terraform plan --out tfplan.out
 
       - name: Terraform Apply - PROD
         id: tf-apply-prod
         run: |
-          cd ${GITHUB_WORKSPACE}/terraform
           terraform apply --auto-approve tfplan.out
 
   semantic-release:
