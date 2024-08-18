@@ -38,13 +38,6 @@ jobs:
         with:
           terraform_version: 1.2.7
 
-      - name: Terraform Init - PROD
-        id: tf-init-prod
-        run: |
-          terraform init \
-            --backend-config="bucket=pc-terraform-modules-tfstate" \
-            --backend-config="key=pc-terraform-modules.tfstate"
-
       - name: Iterate through directories and apply Terraform
         run: |
           for dir in */; do
