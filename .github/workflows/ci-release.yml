@@ -38,16 +38,32 @@ jobs:
         with:
           terraform_version: 1.2.7
 
-      - name: Iterate through directories and apply Terraform
+      # - name: Iterate through directories and apply Terraform
+      #   run: |
+      #     for dir in */; do
+      #       echo "Processing $dir"
+      #       cd $dir
+      #     terraform init \
+      #       --backend-config="bucket=pc-terraform-modules-tfstate" \
+      #       --backend-config="key=pc-terraform-modules.tfstate"
+      #     terraform plan --out tfplan.out
+      #     terraform apply --auto-approve tfplan.out
+      #     done
+
+      - name: Plan/Apply Terraform configurations
         run: |
-          for dir in */; do
+          CONFIG_DIRS=("apiGateway")
+          BASE_DIR="./"
+
+          for dir in "${CONFIG_DIRS[@]}"; do
             echo "Processing $dir"
-            cd $dir
-          terraform init \
-            --backend-config="bucket=pc-terraform-modules-tfstate" \
-            --backend-config="key=pc-terraform-modules.tfstate"
-          terraform plan --out tfplan.out
-          terraform apply --auto-approve tfplan.out
+            cd "$BASE_DIR/$dir"
+            terraform init \
+              --backend-config="bucket=pc-terraform-modules-tfstate" \
+              --backend-config="key=pc-terraform-modules.tfstate"
+            terraform plan -out=plan.out -input=false
+            terraform apply -auto-approve plan.out
+            cd $BASE_DIR # Return to base directory
           done
 
   semantic-release:
