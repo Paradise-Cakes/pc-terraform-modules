@@ -41,7 +41,6 @@ jobs:
       - name: Terraform Init - PROD
         id: tf-init-prod
         run: |
-          cd ${GITHUB_WORKSPACE}/terraform
           terraform init \
             --backend-config="bucket=pc-terraform-modules-tfstate" \
             --backend-config="key=pc-terraform-modules.tfstate"
