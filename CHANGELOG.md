@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.0.0...v1.1.0) (2024-08-22)
+
+
+### Features
+
+* updates to the api gateway module BREAKING CHANGE: module requires more vars ([ae0ec67](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/ae0ec6777451d6adc3a0a3ba4dedd6555b1b822a))
+
 # 1.0.0 (2024-08-17)
 
 
