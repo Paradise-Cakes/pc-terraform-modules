@@ -34,11 +34,6 @@ variable "cache_cluster_size" {
   default     = "0.5"
 }
 
-variable "certificate_arn" {
-  description = "The ARN of the ACM certificate"
-  type        = string
-}
-
 variable "lambda_function_arn" {
   description = "The ARN of the Lambda function to integrate with API Gateway"
   type        = string
