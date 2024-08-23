@@ -1,5 +1,3 @@
-# modules/api_gateway/variables.tf
-
 variable "api_gateway_name" {
   description = "The name of the API Gateway"
   type        = string
@@ -69,7 +67,7 @@ variable "api_zone_id" {
   type        = string
 }
 
-variable "website_zone_id" {
+variable "primary_hosted_zone_id" {
   description = "The zone id of the website"
   type        = string
 }
