@@ -32,7 +32,7 @@ resource "aws_route53_record" "api_ns" {
   count = var.environment == "prod" ? 1 : 0
 
   zone_id = var.website_zone_id
-  name    = var.prod_api_domain_name
+  name    = var.prod_api_name
   type    = "NS"
   ttl     = 300
 
@@ -43,7 +43,7 @@ resource "aws_route53_record" "dev_api_ns" {
   count = var.environment == "prod" ? 1 : 0
 
   zone_id = var.website_zone_id
-  name    = var.dev_api_domain_name
+  name    = var.dev_api_name
   type    = "NS"
   ttl     = 300
 

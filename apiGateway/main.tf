@@ -1,5 +1,5 @@
 resource "aws_api_gateway_rest_api" "rest_api" {
-  name        = var.api_name
+  name        = var.api_gateway_name
   description = var.api_description
 
   binary_media_types = var.binary_media_types

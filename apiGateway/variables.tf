@@ -1,6 +1,6 @@
 # modules/api_gateway/variables.tf
 
-variable "api_name" {
+variable "api_gateway_name" {
   description = "The name of the API Gateway"
   type        = string
 }
@@ -36,16 +36,6 @@ variable "cache_cluster_size" {
 
 variable "certificate_arn" {
   description = "The ARN of the ACM certificate"
-  type        = string
-}
-
-variable "prod_api_domain_name" {
-  description = "The domain name for the prod API Gateway"
-  type        = string
-}
-
-variable "dev_api_domain_name" {
-  description = "The domain name for the dev API Gateway"
   type        = string
 }
 
