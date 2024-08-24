@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.1...v1.1.2) (2024-08-24)
+
+
+### Bug Fixes
+
+* allow overwrite ([2eabd01](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/2eabd01661ec811776dc22a9cd9419a0aca2a994))
+
 ## [1.1.1](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.0...v1.1.1) (2024-08-24)
 
 
