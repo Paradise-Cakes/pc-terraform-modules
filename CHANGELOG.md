@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.0...v1.1.1) (2024-08-24)
+
+
+### Bug Fixes
+
+* add depends on for domain name ([468865b](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/468865b508bfe774fdc97840ec83291ced4475fa))
+
 # [1.1.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.0.0...v1.1.0) (2024-08-22)
 
 
