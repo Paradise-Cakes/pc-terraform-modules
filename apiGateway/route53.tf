@@ -8,6 +8,7 @@ resource "aws_route53_record" "api_record" {
     zone_id                = aws_api_gateway_domain_name.domain_name.cloudfront_zone_id
     evaluate_target_health = true
   }
+  allow_overwrite = true
 }
 
 resource "aws_route53_record" "api_validation_record" {
@@ -36,7 +37,8 @@ resource "aws_route53_record" "api_ns" {
   type    = "NS"
   ttl     = 300
 
-  records = var.prod_api_name_servers
+  records         = var.prod_api_name_servers
+  allow_overwrite = true
 }
 
 resource "aws_route53_record" "dev_api_ns" {
@@ -47,5 +49,6 @@ resource "aws_route53_record" "dev_api_ns" {
   type    = "NS"
   ttl     = 300
 
-  records = var.dev_api_name_servers
+  records         = var.dev_api_name_servers
+  allow_overwrite = true
 }
