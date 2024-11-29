@@ -1,3 +1,13 @@
+# [2.0.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.2...v2.0.0) (2024-11-29)
+
+
+* featHandle acm and records through console ([1b36de6](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/1b36de65a9229b9482635b382b340777bee58b08))
+
+
+### BREAKING CHANGES
+
+* acm certs and dns records are no longer variables
+
 ## [1.1.2](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.1...v1.1.2) (2024-08-24)
 
 
