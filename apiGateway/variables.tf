@@ -52,22 +52,12 @@ variable "environment" {
   type        = string
 }
 
-variable "dev_api_name" {
-  description = "The name of the development API Gateway"
-  type        = string
-}
-
-variable "prod_api_name" {
-  description = "The name of the production API Gateway"
-  type        = string
-}
-
 variable "api_zone_id" {
   description = "The zone id of the API Gateway"
   type        = string
 }
 
-variable "primary_hosted_zone_id" {
+variable "website_zone_id" {
   description = "The zone id of the website"
   type        = string
 }
