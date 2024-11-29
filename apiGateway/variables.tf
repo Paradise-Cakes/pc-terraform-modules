@@ -72,20 +72,6 @@ variable "primary_hosted_zone_id" {
   type        = string
 }
 
-variable "acm_certificate_api_domain_validation_options" {
-  description = "The domain validation options for the ACM certificate"
-}
-
-variable "prod_api_name_servers" {
-  description = "The name servers for the prod API Gateway"
-  type        = list(string)
-}
-
-variable "dev_api_name_servers" {
-  description = "The name servers for the dev API Gateway"
-  type        = list(string)
-}
-
 variable "api_acm_certificate_arn" {
   description = "value of the ACM certificate ARN"
   type        = string
