@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.2.0...v1.3.0) (2024-11-29)
+
+
+### Features
+
+* Change variables ([10fdade](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/10fdadec2f9411d6bda7a7cf3055cea18f540870))
+
 # [1.2.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.2...v1.2.0) (2024-11-29)
 
 
