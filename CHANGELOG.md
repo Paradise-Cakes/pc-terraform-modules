@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.2...v1.2.0) (2024-11-29)
+
+
+### Features
+
+* Handle acm certs and records through console now ([66377e0](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/66377e0b2b95704bc81482bddf2a8c4dfcc67a10))
+
 ## [1.1.2](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.1.1...v1.1.2) (2024-08-24)
 
 
