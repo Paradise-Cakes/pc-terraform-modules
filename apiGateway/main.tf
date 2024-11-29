@@ -45,8 +45,6 @@ resource "aws_api_gateway_deployment" "deployment" {
 resource "aws_api_gateway_domain_name" "domain_name" {
   certificate_arn = var.api_acm_certificate_arn
   domain_name     = var.api_domain_name
-
-  depends_on = [aws_acm_certificate_validation.validation]
 }
 
 resource "aws_api_gateway_base_path_mapping" "base_path_mapping" {
