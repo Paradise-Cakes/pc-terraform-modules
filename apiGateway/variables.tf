@@ -71,3 +71,13 @@ variable "api_domain_name" {
   description = "value of the API domain name"
   type        = string
 }
+
+variable "authorizer_name" {
+  description = "The name of the authorizer"
+  type        = string
+}
+
+variable "authorizer_uri" {
+  description = "The URI of the authorizer"
+  type        = string
+}
