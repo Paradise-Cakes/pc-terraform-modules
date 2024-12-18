@@ -62,6 +62,11 @@ resource "aws_api_gateway_integration" "proxy" {
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = var.lambda_function_arn
+
+  request_parameters = {
+    "integration.request.header.user-email"  = "context.user_email"
+    "integration.request.header.user-groups" = "context.user_groups"
+  }
 }
 
 resource "aws_api_gateway_rest_api_policy" "rest_api_policy" {
