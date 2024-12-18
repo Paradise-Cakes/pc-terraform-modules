@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.4.0...v1.5.0) (2024-12-18)
+
+
+### Features
+
+* include custom headers ([142e841](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/142e841694a9ecebf8fb0a6ee6d15ad6df29781b))
+
 # [1.4.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.3.0...v1.4.0) (2024-12-18)
 
 
