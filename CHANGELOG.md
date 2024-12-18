@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.3.0...v1.4.0) (2024-12-18)
+
+
+### Features
+
+* authorizer stuff ([#1](https://github.com/Paradise-Cakes/pc-terraform-modules/issues/1)) ([4019318](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/40193186b3f81fc0a2ac8bad46a8009d112a2c4d))
+
 # [1.3.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.2.0...v1.3.0) (2024-11-29)
 
 
