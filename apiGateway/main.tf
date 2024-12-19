@@ -31,7 +31,8 @@ resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = aws_api_gateway_rest_api.rest_api.id
   depends_on = [
     aws_api_gateway_integration.proxy,
-    aws_api_gateway_integration.cors
+    aws_api_gateway_integration.cors,
+    aws_api_gateway_authorizer.lambda_authorizer
   ]
 
   triggers = {
