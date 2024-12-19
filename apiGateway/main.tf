@@ -130,7 +130,7 @@ resource "aws_api_gateway_integration_response" "cors" {
 resource "aws_api_gateway_authorizer" "lambda_authorizer" {
   name            = var.authorizer_name
   rest_api_id     = aws_api_gateway_rest_api.rest_api.id
-  type            = "TOKEN"
+  type            = "REQUEST"
   authorizer_uri  = var.authorizer_uri
   identity_source = "method.request.header.Authorization"
 }
