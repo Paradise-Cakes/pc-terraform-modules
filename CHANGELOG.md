@@ -1,3 +1,38 @@
+## [1.7.1](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.0...v1.7.1) (2024-12-19)
+
+
+### Bug Fixes
+
+* Add depends on for cors integration ([2989bef](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/2989befbfc81e8c1765cb0ce5b842ba0d3720c75))
+
+# [1.7.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.6.0...v1.7.0) (2024-12-19)
+
+
+### Features
+
+* change auth type ([5e0a6c1](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/5e0a6c17be789a901793a3fc5f4cc66d0f25d102))
+
+# [1.6.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.5.0...v1.6.0) (2024-12-19)
+
+
+### Features
+
+* depend on authorizer for deployment ([d2b4dee](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/d2b4dee6cff448b3914ed367fa6e224b060e5700))
+
+# [1.5.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.4.0...v1.5.0) (2024-12-18)
+
+
+### Features
+
+* include custom headers ([142e841](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/142e841694a9ecebf8fb0a6ee6d15ad6df29781b))
+
+# [1.4.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.3.0...v1.4.0) (2024-12-18)
+
+
+### Features
+
+* authorizer stuff ([#1](https://github.com/Paradise-Cakes/pc-terraform-modules/issues/1)) ([4019318](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/40193186b3f81fc0a2ac8bad46a8009d112a2c4d))
+
 # [1.3.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.2.0...v1.3.0) (2024-11-29)
 
 

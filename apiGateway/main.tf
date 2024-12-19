@@ -15,7 +15,8 @@ resource "aws_api_gateway_method" "proxy" {
   rest_api_id   = aws_api_gateway_rest_api.rest_api.id
   resource_id   = aws_api_gateway_resource.proxy.id
   http_method   = "ANY"
-  authorization = "NONE"
+  authorization = "CUSTOM"
+  authorizer_id = aws_api_gateway_authorizer.lambda_authorizer.id
 }
 
 resource "aws_api_gateway_stage" "stage" {
@@ -30,7 +31,8 @@ resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = aws_api_gateway_rest_api.rest_api.id
   depends_on = [
     aws_api_gateway_integration.proxy,
-    aws_api_gateway_integration.cors
+    aws_api_gateway_integration.cors,
+    aws_api_gateway_authorizer.lambda_authorizer
   ]
 
   triggers = {
@@ -61,6 +63,11 @@ resource "aws_api_gateway_integration" "proxy" {
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = var.lambda_function_arn
+
+  request_parameters = {
+    "integration.request.header.user-email"  = "context.user_email"
+    "integration.request.header.user-groups" = "context.user_groups"
+  }
 }
 
 resource "aws_api_gateway_rest_api_policy" "rest_api_policy" {
@@ -114,7 +121,7 @@ resource "aws_api_gateway_integration_response" "cors" {
   status_code = 200
 
   depends_on = [
-    aws_api_gateway_integration.proxy
+    aws_api_gateway_integration.proxy,
   ]
 
   response_parameters = {
@@ -122,4 +129,12 @@ resource "aws_api_gateway_integration_response" "cors" {
     "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS,GET,PUT,DELETE,PATCH'"
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
+}
+
+resource "aws_api_gateway_authorizer" "lambda_authorizer" {
+  name            = var.authorizer_name
+  rest_api_id     = aws_api_gateway_rest_api.rest_api.id
+  type            = "REQUEST"
+  authorizer_uri  = var.authorizer_uri
+  identity_source = "method.request.header.Authorization"
 }
