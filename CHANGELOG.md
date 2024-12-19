@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.0...v1.7.1) (2024-12-19)
+
+
+### Bug Fixes
+
+* Add depends on for cors integration ([2989bef](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/2989befbfc81e8c1765cb0ce5b842ba0d3720c75))
+
 # [1.7.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.6.0...v1.7.0) (2024-12-19)
 
 
