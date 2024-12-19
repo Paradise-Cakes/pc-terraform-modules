@@ -120,6 +120,10 @@ resource "aws_api_gateway_integration_response" "cors" {
   http_method = aws_api_gateway_method.cors.http_method
   status_code = 200
 
+  depends_on = [
+    aws_api_gateway_integration.proxy,
+  ]
+
   response_parameters = {
     "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,Authorization,User-Agent'"
     "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS,GET,PUT,DELETE,PATCH'"
