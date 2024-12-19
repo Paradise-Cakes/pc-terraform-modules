@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.5.0...v1.6.0) (2024-12-19)
+
+
+### Features
+
+* depend on authorizer for deployment ([d2b4dee](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/d2b4dee6cff448b3914ed367fa6e224b060e5700))
+
 # [1.5.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.4.0...v1.5.0) (2024-12-18)
 
 
