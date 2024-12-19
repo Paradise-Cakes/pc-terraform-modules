@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.6.0...v1.7.0) (2024-12-19)
+
+
+### Features
+
+* change auth type ([5e0a6c1](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/5e0a6c17be789a901793a3fc5f4cc66d0f25d102))
+
 # [1.6.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.5.0...v1.6.0) (2024-12-19)
 
 
