@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.2...v1.8.0) (2024-12-20)
+
+
+### Features
+
+* get rid of authorizer for now ([e6b7637](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/e6b7637e8c98eb936089d27a02b1a5205c4f4317))
+
 ## [1.7.2](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.1...v1.7.2) (2024-12-20)
 
 
