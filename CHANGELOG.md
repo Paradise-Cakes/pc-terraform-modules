@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.1...v1.7.2) (2024-12-20)
+
+
+### Bug Fixes
+
+* depends on proxy ([#2](https://github.com/Paradise-Cakes/pc-terraform-modules/issues/2)) ([cd2dab5](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/cd2dab594324ed8c0968729a4d2ee1e9a458fb28))
+
 ## [1.7.1](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.0...v1.7.1) (2024-12-19)
 
 
