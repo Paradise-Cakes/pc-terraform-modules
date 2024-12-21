@@ -71,3 +71,12 @@ variable "api_domain_name" {
   description = "value of the API domain name"
   type        = string
 }
+
+variable "http_methods" {
+  description = "The HTTP methods supported by the API Gateway"
+  type = map(object({
+    authorization = string
+    authorizer_id = string
+    lambda_uri    = string
+  }))
+}
