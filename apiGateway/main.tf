@@ -11,11 +11,14 @@ resource "aws_api_gateway_resource" "proxy" {
   path_part   = "{proxy+}"
 }
 
-resource "aws_api_gateway_method" "proxy" {
+resource "aws_api_gateway_method" "method" {
+  for_each = var.http_methods
+
   rest_api_id   = aws_api_gateway_rest_api.rest_api.id
   resource_id   = aws_api_gateway_resource.proxy.id
-  http_method   = "ANY"
-  authorization = "NONE"
+  http_method   = each.key
+  authorization = each.value.authorization
+  authorizer_id = each.value.authorization == "CUSTOM" ? each.value.authorizer_id : null
 }
 
 resource "aws_api_gateway_stage" "stage" {
@@ -29,7 +32,7 @@ resource "aws_api_gateway_stage" "stage" {
 resource "aws_api_gateway_deployment" "deployment" {
   rest_api_id = aws_api_gateway_rest_api.rest_api.id
   depends_on = [
-    aws_api_gateway_integration.proxy,
+    aws_api_gateway_integration.method_integration,
     aws_api_gateway_integration.cors,
   ]
 
@@ -54,13 +57,15 @@ resource "aws_api_gateway_base_path_mapping" "base_path_mapping" {
   base_path   = aws_api_gateway_stage.stage.stage_name
 }
 
-resource "aws_api_gateway_integration" "proxy" {
+resource "aws_api_gateway_integration" "method_integration" {
+  for_each = var.http_methods
+
   rest_api_id             = aws_api_gateway_rest_api.rest_api.id
   resource_id             = aws_api_gateway_resource.proxy.id
-  http_method             = aws_api_gateway_method.proxy.http_method
+  http_method             = aws_api_gateway_method.method[each.key].http_method
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = var.lambda_function_arn
+  uri                     = each.value.lambda_uri
 
   request_parameters = {
     "integration.request.header.user-email"  = "context.user_email"
@@ -119,7 +124,7 @@ resource "aws_api_gateway_integration_response" "cors" {
   status_code = 200
 
   depends_on = [
-    aws_api_gateway_integration.proxy,
+    aws_api_gateway_integration.method_integration,
   ]
 
   response_parameters = {
