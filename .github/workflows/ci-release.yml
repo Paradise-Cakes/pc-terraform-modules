@@ -16,9 +16,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  permissions:
-    contents: read
   terraform-validation:
+    permissions:
+      contents: read
+
     name: Terraform Validation
     runs-on: ubuntu-latest
     steps:
