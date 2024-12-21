@@ -1,15 +1,20 @@
-name: CI Pipeline
+name: CI Pipeline for PC Terraform Modules
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+
+defaults:
+  run:
+    shell: bash
 
 permissions:
-  contents: write
+  id-token: write
+  pull-requests: write
+  contents: read
+
+concurrency:
+  group: ${{ github.ref == 'refs/heads/main' && 'main-branch' || 'feature-branches' }}
+  cancel-in-progress: true
 
 jobs:
   terraform-validation:
