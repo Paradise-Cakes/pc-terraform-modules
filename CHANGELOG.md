@@ -1,3 +1,11 @@
+# [1.9.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.8.0...v1.9.0) (2024-12-21)
+
+
+### Features
+
+* Authorizer optional for certain http methods ([#3](https://github.com/Paradise-Cakes/pc-terraform-modules/issues/3)) ([c1b5199](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/c1b51993edbdf70e17ac7498bc1e8eae7751ca20))
+* Authorizer optional for certain http methods ([#4](https://github.com/Paradise-Cakes/pc-terraform-modules/issues/4)) ([e7c0fb1](https://github.com/Paradise-Cakes/pc-terraform-modules/commit/e7c0fb124265c1169bde731801f4c96ad6163316))
+
 # [1.8.0](https://github.com/Paradise-Cakes/pc-terraform-modules/compare/v1.7.2...v1.8.0) (2024-12-20)
 
 
